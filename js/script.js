@@ -90,7 +90,7 @@ drawProductsUI = function (product = []) {
   let productsUi = product.map((item) => {
     return `
       <div class="product-item" style="border: ${item.isMe === "Y" ? "2px solid #bd6ff1" : "1px solid #ddd"};">
-          <img src="${item.imgUrl}" alt="${item.title}" class="product-item-image" onerror="this.src='https://via.placeholder.com/300x220?text=No+Image'">
+          <img src="${item.imgUrl}" alt="${item.title}" class="product-item-image">
           <div class="product-item-decs">
             <a onclick="saveItemData(${item.id})" class="product-title">${item.title}</a>
             <h2 style="display: none;">${item.title}</h2>
