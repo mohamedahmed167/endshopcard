@@ -14,7 +14,7 @@ itemDom.innerHTML+=`
 function editProduct(id){
     localStorage.setItem("editProduct",id);
     setTimeout(()=>{
-        window.location="../html/edit.html";
+        window.location="edit.html";
     },500)
 
 

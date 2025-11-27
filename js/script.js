@@ -90,7 +90,7 @@ drawProductsUI = function (product = []) {
   let productsUi = product.map((item) => {
     return `
       <div class="product-item" style="border: ${item.isMe === "Y" ? "2px solid #bd6ff1" : "1px solid #ddd"};">
-          <img src="${item.imgUrl}" alt="${item.title}" class="product-item-image"'">
+          <img src="${item.imgUrl}" alt="${item.title}" class="product-item-image" onerror="this.src='https://via.placeholder.com/300x220?text=No+Image'">
           <div class="product-item-decs">
             <a onclick="saveItemData(${item.id})" class="product-title">${item.title}</a>
             <h2 style="display: none;">${item.title}</h2>
@@ -98,10 +98,10 @@ drawProductsUI = function (product = []) {
             <span class="product-size">Size: ${item.size}</span>
             ${item.isMe === "Y" ? `
               <div style="margin-top: 10px; display: flex; gap: 10px; flex-wrap: wrap;">
-                <button class='edit-item' onclick='editProduct(${item.id})'>
+                <button class='edit-item' onclick='editProduct(${item.id})'> 
                   <i class="fa fa-edit"></i> Edit
                 </button>
-                <button class='delet-item' onclick='deletProduct(${item.id})'>
+                <button class='delet-item' onclick='deletProduct(${item.id})'> 
                   <i class="fa fa-trash"></i> Delete
                 </button>
               </div>
@@ -111,7 +111,7 @@ drawProductsUI = function (product = []) {
             <a class="add-to-cart" onclick="addToCard(${item.id})">
               <i class="fa fa-shopping-cart"></i> Add to Cart
             </a>
-            <i class="fa-regular fa-heart favorite-icon"
+            <i class="fa-regular fa-heart favorite-icon" 
                style="color: ${item.liked == true ? "#ff0000" : "#999"}"
                onclick="addToFavroite(${item.id})"
                title="${item.liked == true ? "Remove from favorites" : "Add to favorites"}">
@@ -194,16 +194,14 @@ function getUniqueArr(arr, filterType) {
 }
 
 
-// function openmenu() {
-//   if (cartsProductDivDom.innerHTML !== "") {
-//     cartsProductmenu.style.display =
-//       cartsProductmenu.style.display === "block" ? "none" : "block";
-//   }
-// }
-// shoping.addEventListener("click", openmenu);
+function getHtmlPagePath(pageName) {
+  const currentPath = window.location.pathname;
+  return currentPath.includes("/html/") ? pageName : `html/${pageName}`;
+}
+
 function saveItemData(id) {
   localStorage.setItem("productDetiles", id);
-  window.location = "../html/cardDetails.html";
+  window.location = getHtmlPagePath("cardDetails.html");
 }
 
 input.addEventListener("keyup", function (e) {
@@ -331,7 +329,7 @@ function SearchBysize(e) {
   } else {
     // إذا لم توجد منتجات، نعرض رسالة
     if (productDom) {
-      productDom.innerHTML = `<p style="text-align:end; color:#bd6ff1">there is no item to show it</p>`;
+      productDom.innerHTML = "<p>لا توجد منتجات تطابق المعايير</p>";
     }
   }
 }
@@ -356,6 +354,6 @@ if (size) {
 function editProduct(id) {
   localStorage.setItem("editProduct", id)
   setTimeout(() => {
-    window.location = "../html/edit.html";
+    window.location = getHtmlPagePath("edit.html");
   }, 500)
 }

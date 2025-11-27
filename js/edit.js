@@ -1,7 +1,7 @@
 let product = JSON.parse(localStorage.getItem("products")) || productDB;
 let productId = JSON.parse(localStorage.getItem("editProduct"));
 let getProduct = product.find((i) => i.id === productId);
-console.log("before updata",getProduct)
+console.log("before updata", getProduct)
 let productName = document.getElementById("productName");
 let productdesc = document.getElementById("productdesc");
 let productSize = document.getElementById("productSize");
@@ -22,16 +22,16 @@ function getProductSizeValue(e) {
 
 function updataProductFun(e) {
     e.preventDefault();
-    console.log("new product ",productName.value)
-    getProduct.title=productName.value;
-    getProduct.desc=productdesc.value;
-    getProduct.size=productSize.value;
-    getProduct.imgUrl=productImage;
+    console.log("new product ", productName.value)
+    getProduct.title = productName.value;
+    getProduct.desc = productdesc.value;
+    getProduct.size = productSize.value;
+    getProduct.imgUrl = productImage;
     localStorage.setItem("products", JSON.stringify(product));
-    console.log("After updata",getProduct)
-    setTimeout(()=>{
-        window.location="/index.html"
-    },500);
+    console.log("After updata", getProduct)
+    setTimeout(() => {
+        window.location = "../index.html"
+    }, 500);
 }
 
 function uploadeImage() {

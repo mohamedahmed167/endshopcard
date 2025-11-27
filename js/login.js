@@ -5,23 +5,23 @@ let getUser = localStorage.getItem("username");
 let getPass = localStorage.getItem("password");
 
 sign_in.addEventListener("click", login);
-function login(e){
-    {
-        e.preventDefault();
+function login(e) {
+  {
+    e.preventDefault();
 
-        if (userName.value === "" || pass.value === "") {
-          alert("Please enter your information");
-        } else {
-          if ((getUser &&getUser.trim()===userName.value.trim()) && getPass && getPass ===pass.value.trim()   ) {
-            console.log("Login successful ✅");
-              setTimeout(()=>{
-                  window.location="/index.html";
-              },1500)
+    if (userName.value === "" || pass.value === "") {
+      alert("Please enter your information");
+    } else {
+      if ((getUser && getUser.trim() === userName.value.trim()) && getPass && getPass === pass.value.trim()) {
+        console.log("Login successful ✅");
+        setTimeout(() => {
+          window.location = "../index.html";
+        }, 1500)
 
 
-          } else {
-            console.log("Username or password is wrong ❌");
-          }
-        }
+      } else {
+        console.log("Username or password is wrong ❌");
       }
+    }
+  }
 }

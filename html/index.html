@@ -44,17 +44,40 @@
     </div>
   </header>
   <section class="home">
-      <i class="fa-solid fa-magnifying-glass"></i>
-      <input id="search"  type="text" placeholder="search by name">
     <div class="container">
-      <div class="products"></div>
-      <div class="noProducts"></div>
+      <div class="search-wrapper">
+        <div class="search-input-container">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input id="search" type="text" placeholder="Search products by name...">
+        </div>
+      </div>
+      
+      <div class="products-layout">
+        <aside class="filter-sidebar">
+          <div class="product-filter">
+            <label for="size-filter" class="filter-label">Filter by Size</label>
+            <select id="size-filter">
+              <option value="" hidden>Select Size</option>
+              <option value="all">All Products</option>
+              <option value="small">Small</option>
+              <option value="medium">Medium</option>
+              <option value="large">Large</option>
+            </select>
+          </div>
+        </aside>
+        
+        <main class="products-container">
+          <div class="products"></div>
+          <div class="noProducts"></div>
+        </main>
+      </div>
     </div>
+    <a href="createNewItem.html" id="newItem" title="Add New Product"><i class="fa fa-plus"></i></a>
   </section>
   <script src="../js/user.js"></script>
   <script src="../js/data.js"></script>
-  <script src="../js/cartmenu.js"></script>
   <script src="../js/shopicon.js"></script>
-  <script src="../js/fav.js"></script>
+  <script src="../js/cartmenu.js"></script>
+  <script src="../js/script.js"></script>
 </body>
 </html>
