@@ -4,7 +4,7 @@ let productDB = [
       title: "Headphone imgs",
       desc:" Lorem ipsum dolor sit amet",
       size: "Large",
-      imgUrl: "../imgs/images.jpeg",
+      imgUrl: "/imgs/images.jpeg",
       qty:1,
       isMe:"N"
     },
@@ -13,7 +13,7 @@ let productDB = [
       title: "Laptop imgs",
       desc:" Lorem ipsum dolor sit amet",
       size: "Large",
-      imgUrl: "../imgs/laptop.jpg",
+      imgUrl: "/imgs/laptop.jpg",
       qty:1,
       isMe:"N"
     },
@@ -22,7 +22,7 @@ let productDB = [
       title: "Phone imgs",
       desc:" Lorem ipsum dolor sit amet",
       size: "Large",
-      imgUrl: "../imgs/phone.jpeg",
+      imgUrl: "/imgs/phone.jpeg",
       qty:1,
       isMe:"N"
 
@@ -32,9 +32,10 @@ let productDB = [
       title: "Mouse imgs",
       desc:" Lorem ipsum dolor sit amet",
       size: "Large",
-      imgUrl: "../imgs/images.jpeg",
+      imgUrl: "/imgs/images.jpeg",
       qty:1,
       isMe:"N"
     },
   ];
+
   // localStorage.setItem("products",JSON.stringify(productDB));
